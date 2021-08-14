@@ -1,0 +1,66 @@
+
+Epic Games Psyonix Rocket League <=1.95 Insecure Permissions
+
+
+Vendor: Epic Games Inc. | Psyonix, LLC
+Product web page: https://www.epicgames.com
+                  https://www.psyonix.com
+                  https://www.rocketleague.com
+Affected version: <=1.95
+
+Summary: Rocket League is a high-powered hybrid of arcade-style soccer
+and vehicular mayhem with easy-to-understand controls and fluid, physics-driven
+competition.
+
+Desc: The application suffers from an elevation of privileges vulnerability
+which can be used by a simple authenticated user that can change the executable
+file with a binary of choice. The vulnerability exist due to the improper
+permissions, with the 'F' flag (Full) for 'Authenticated Users' group.
+
+Tested on: Microsoft Windows 10
+
+
+Vulnerability discovered by Gjoko 'LiquidWorm' Krstic
+                            @zeroscience
+
+
+Advisory ID: ZSL-2021-5650
+Advisory URL: https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5650.php
+
+
+20.04.2021
+
+--
+
+
+E:\Epic Games\rocketleague\Binaries\Win64>cacls RocketLeague.exe
+E:\Epic Games\rocketleague\Binaries\Win64\RocketLeague.exe BUILTIN\Administrators:F
+                                                           NT AUTHORITY\SYSTEM:F
+                                                           NT AUTHORITY\Authenticated Users:C
+                                                           BUILTIN\Users:R
+
+
+E:\Epic Games\rocketleague>cacls Binaries
+E:\Epic Games\rocketleague\Binaries BUILTIN\Administrators:F
+                                    BUILTIN\Administrators:(OI)(CI)(IO)F
+                                    NT AUTHORITY\SYSTEM:F
+                                    NT AUTHORITY\SYSTEM:(OI)(CI)(IO)F
+                                    NT AUTHORITY\Authenticated Users:C
+                                    NT AUTHORITY\Authenticated Users:(OI)(CI)(IO)C
+                                    BUILTIN\Users:R
+                                    BUILTIN\Users:(OI)(CI)(IO)(special access:)
+                                                              GENERIC_READ
+                                                              GENERIC_EXECUTE
+
+
+E:\Epic Games\rocketleague>cacls TAGame
+E:\Epic Games\rocketleague\TAGame BUILTIN\Administrators:F
+                                  BUILTIN\Administrators:(OI)(CI)(IO)F
+                                  NT AUTHORITY\SYSTEM:F
+                                  NT AUTHORITY\SYSTEM:(OI)(CI)(IO)F
+                                  NT AUTHORITY\Authenticated Users:C
+                                  NT AUTHORITY\Authenticated Users:(OI)(CI)(IO)C
+                                  BUILTIN\Users:R
+                                  BUILTIN\Users:(OI)(CI)(IO)(special access:)
+                                                            GENERIC_READ
+                                                            GENERIC_EXECUTE

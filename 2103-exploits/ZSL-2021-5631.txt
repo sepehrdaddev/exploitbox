@@ -1,0 +1,44 @@
+
+SOYAL Biometric Access Control System 5.0 Weak Default Credentials
+
+
+Vendor: SOYAL Technology Co., Ltd
+Product web page: https://www.soyal.com.tw | https://www.soyal.com
+Affected version: AR-727 i/CM - F/W: 5.0 
+                  AR837E/EF   - F/W: 4.3
+                  AR725Ev2    - F/W: 4.3 191231
+                  AR331/725E  - F/W: 4.2
+                  AR837E/EF   - F/W: 4.1
+                  AR-727CM /i - F/W: 4.09
+                  AR-727CM /i - F/W: 4.06
+                  AR-837E     - F/W: 3.03
+
+Summary: Soyal Access systems are built into Raytel Door Entry Systems
+and are providing access and lift control to many buildings from public
+and private apartment blocks to prestigious public buildings.
+
+Desc: The web control panel uses weak set of default administrative
+credentials (no password) that can be easily guessed in remote password
+attacks.
+
+Tested on: SOYAL Technology WebServer 2.0
+           SOYAL Serial Device Server 4.03A 
+           SOYAL Serial Device Server 4.01n
+           SOYAL Serial Device Server 3.07n
+
+
+Vulnerability discovered by Gjoko 'LiquidWorm' Krstic
+                            @zeroscience
+
+
+Advisory ID: ZSL-2021-5631
+Advisory URL: https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5631.php
+
+
+25.01.2021
+
+--
+
+
+User: admin
+Pass: 
